@@ -1,0 +1,18 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - !ruby/regexp /old_and_unused\.rb$/
+    - 'Rakefile'
+    - 'bin/**/*'
+
+Style/Documentation:
+  Exclude:
+    - 'app/models/application_record.rb'
+    - 'app/controllers/application_controller.rb'
+    - 'app/mailers/application_mailer.rb'
+    - 'app/helpers/application_helper.rb'
