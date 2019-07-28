@@ -2,7 +2,7 @@
 
 This project is example code to provide to potential employers. 
 
-https://larping-2019.herokuapp.com/
+[Production Site](https://larping-2019.herokuapp.com/)
 
 ## Stack
 - Ruby on Rails
