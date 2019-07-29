@@ -12,7 +12,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
 gem 'pg'
+gem 'pry-byebug'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.6'
 gem 'rubocop', require: false
@@ -20,7 +22,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
   gem 'factory_bot_rails'

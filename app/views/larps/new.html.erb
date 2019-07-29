@@ -1,0 +1,29 @@
+<% content_for :title, "Create a LARP" %>
+<div class="cell small-12 medium-6 medium-offset-3">
+    <div class="grid-x grid-margin-x grid-margin-y grid-padding-x form__container">
+        <div class="cell">
+            <%= form_for @larp do |f| %>
+                <div class="field">
+                    <%= f.label :title %>
+                    <%= f.text_field :title %>
+                </div>
+                <div class="field">
+                    <%= f.label :description %>
+                    <%= f.text_area :description %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :start_date %>
+                    <%= f.datetime_field :start_date %>
+                </div>
+                <%= f.hidden_field :user_id %>
+                <hr>
+                <%= render "addresses/form", f: f %>
+
+                <div class="field">
+                    <%= f.submit "Create LARP", class: "button primary" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

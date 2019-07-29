@@ -1,0 +1,15 @@
+<% content_for :title, "LARPs" %>
+<div class="cell small-12 medium-6 medium-offset-3">
+    <div class="grid-x grid-margin-x grid-margin-y grid-padding-x form__container">
+        <div class="cell">
+            <section>
+                <% @larps.each do |larp| %>
+                    <article>
+                    <h2><%= larp.title %></h2>
+                    <p><%= larp.description %><p>
+                    </article>
+                <% end %>
+            </section>
+        </div>
+    </div>
+</div>
