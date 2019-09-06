@@ -1,0 +1,16 @@
+<% content_for :title, "LARPs" %>
+<%= render "submenu" %>
+<div class="cell small-12 medium-6 medium-offset-3">
+  <div class="grid-x grid-margin-x grid-margin-y grid-padding-x">
+    <section class="cell">
+      <% @larps.each do |larp| %>
+        <article class="form__container">
+          <%= link_to larp do %>
+            <h2><%= larp.title %></h2>
+            <p><%= larp.description %><p>
+          <% end %>
+        </article>
+      <% end %>
+    </section>
+  </div>
+</div>

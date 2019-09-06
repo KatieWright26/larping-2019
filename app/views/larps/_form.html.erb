@@ -1,0 +1,21 @@
+<%= form_for @larp do |f| %>
+  <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+  </div>
+  <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+      <%= f.label :start_date %>
+      <%= f.datetime_field :start_date %>
+  </div>
+  <hr>
+  <%= render "addresses/form", f: f %>
+
+  <div class="field">
+      <%= f.submit "Create LARP", class: "button primary" %>
+  </div>
+<% end %>

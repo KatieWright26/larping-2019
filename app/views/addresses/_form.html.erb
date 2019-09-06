@@ -1,0 +1,18 @@
+<%= f.fields_for :address, Address.new do |a| %>
+    <div class="field">
+        <%= a.label :street %>
+        <%= a.text_field :street %>
+    </div>
+    <div class="field">
+        <%= a.label :suburb %>
+        <%= a.text_field :suburb %>
+    </div>
+    <div class="field">
+        <%= a.label :postcode %>
+        <%= a.text_field :postcode %>
+    </div>
+    <div class="field">
+        <%= a.label :country %>
+        <%= a.select :country, AddressesHelper::COUNTRIES, include_blank: true %>
+    </div>
+<% end %>

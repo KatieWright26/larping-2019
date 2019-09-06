@@ -1,0 +1,24 @@
+<section class="cell">
+  <article>
+    <h1><%= @user.name %></h1>
+    <% if current_user == @user %>
+      <p><%= link_to "Edit", edit_user_path(@user)%></p>
+    <% end %>
+  </article>
+
+  <article class="grid-x grid-margin-x">
+    <div class="cell medium-6">
+      <p>You have created the following LARPs</p>
+      <hr>
+      <ul>
+        <% @larps.each do |larp| %>
+          <li><%= link_to larp.title, larp_path(larp.id) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="cell medium-6">
+      <p>Member since <%= @user.created_at.strftime("%b %Y") %></p>
+      <p>Email <%= @user.email%></p>
+    </div>
+  </article>
+</section>

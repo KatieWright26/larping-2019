@@ -15,7 +15,13 @@ Documentation:
 
 Style/Documentation:
   Exclude:
-    - 'app/models/application_record.rb'
-    - 'app/controllers/application_controller.rb'
-    - 'app/mailers/application_mailer.rb'
-    - 'app/helpers/application_helper.rb'
+    - 'app/models/**'
+    - 'app/controllers/**'
+    - 'app/mailers/**'
+    - 'app/helpers/**'
+    - 'app/policies/**'
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*.rb"
+    - "config/routes.rb"
