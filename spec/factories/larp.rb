@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :larp do
-    references { '' }
     title { 'MyString' }
     description { 'MyString' }
+    start_date { Time.now + 10 }
   end
 end
