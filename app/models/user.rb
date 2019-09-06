@@ -5,6 +5,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :larps
+  has_many :larps, inverse_of: :user
   validates :email, :password, :name, presence: true
 end
