@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'pry-byebug'
 gem 'puma', '~> 3.7'
+gem 'pundit'
 gem 'rails', '~> 5.1.6'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
