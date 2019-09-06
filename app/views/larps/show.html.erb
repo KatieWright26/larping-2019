@@ -1,0 +1,7 @@
+<%= render "submenu" %>
+<div class="cell">
+  <h1><%= @larp.title %> by <%= @larp.user.name %></h1>
+  <% if current_user == @larp.user %>
+    <p><%= link_to "Edit", edit_larp_path(@larp)%><p>
+  <% end %>
+</div>

@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   resources :larps
   resources :addresses
+  resources :users, only: [:edit, :update, :show]
 end
