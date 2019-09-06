@@ -9,6 +9,9 @@ AllCops:
     - !ruby/regexp /old_and_unused\.rb$/
     - 'Rakefile'
     - 'bin/**/*'
+    
+Documentation:
+  Enabled: false
 
 Style/Documentation:
   Exclude:
