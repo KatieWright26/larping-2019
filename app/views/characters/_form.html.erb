@@ -1,0 +1,24 @@
+<%= form_with model: @character, autocomplete: false do |f| %>
+  <%= f.hidden_field :larp_id, value: @larp.id %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :race %>
+    <%= f.select :race, CharacterHelper::RACES %>
+  </div>
+
+  <div class="field">
+    <%= f.label :occupation %>
+    <%= f.text_field :occupation %>
+  </div>
+
+  <%= f.submit class: "button primary" %>
+<% end %>
