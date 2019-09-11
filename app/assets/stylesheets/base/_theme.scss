@@ -44,4 +44,25 @@ body.dark {
       }
     }
   }
+
+  .navigation__sub-menu {
+    a {
+      color: white;
+    }
+  }
+
+  .accordion {
+    background-color: $base-mid;
+    .accordion-title {
+      border-color: $base-mid-contrast;
+      color: $base-mid-contrast;
+      font-weight: bold;
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 5px $base-mid-contrast;
+        background-color: $base-mid-contrast;
+        color: white;
+      }
+    }
+  }
 }
