@@ -9,6 +9,39 @@ body.dark {
   }
 
   .switch.large .switch-paddle::after {
-   @include switch-icon("\f6d9");
+    @include switch-icon("\f6d9");
+  }
+
+  .form__container {
+    background-color: $base-dark;
+    border-color: $base-mid-contrast;
+    h2, p, label {
+      color: white;
+    }
+    a {
+      color: $base-mid-contrast;
+      &:hover {
+        color: lighten($base-mid-contrast, 10%);
+      }
+    }
+    .button.primary {
+      background-color: $base-dark-contrast;
+      color: white;
+      &:hover {
+        background-color: $base-mid-contrast
+      }
+    }
+    hr {
+      border-color: white;
+    }
+    input {
+      background-color: $base-mid;
+      border-color: $base-mid-contrast;
+      color: $base-mid-contrast;
+      &:focus,
+      &:hover {
+        box-shadow: 0 0 5px $base-mid-contrast;
+      }
+    }
   }
 }
