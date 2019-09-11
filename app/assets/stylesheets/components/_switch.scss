@@ -1,0 +1,36 @@
+.switch.large {
+  display: flex;
+  align-content: center;
+  margin-bottom: 0;
+  .switch-paddle {
+    font-size: 0.7rem;
+    width: 13em;
+    &::after {
+      background-color: transparent;
+      content: "\f286";
+      font-style: normal;
+      font-size: 2em;
+          display: flex;
+    align-items: center;
+    }
+  }
+
+  input:checked ~ .switch-paddle::after {
+    left: 7rem;
+  }
+}
+
+.switch-active {
+  left: 3%;
+
+}
+.switch-inactive {
+  right: 3%;
+  text-align: right;
+}
+
+.switch-active,
+.switch-inactive {
+  max-width: 60%;
+  font-family: Helvetica;
+}
