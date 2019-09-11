@@ -1,0 +1,31 @@
+.switch.large {
+  display: flex;
+  align-content: center;
+  margin-bottom: 0;
+  .switch-paddle {
+    font-size: 0.7rem;
+    width: 13em;
+    &::after {
+      @include switch-icon("\f286");
+    }
+  }
+
+  input:checked ~ .switch-paddle::after {
+    left: 7rem;
+  }
+}
+
+.switch-active {
+  left: 3%;
+
+}
+.switch-inactive {
+  right: 3%;
+  text-align: right;
+}
+
+.switch-active,
+.switch-inactive {
+  max-width: 60%;
+  font-family: Helvetica;
+}

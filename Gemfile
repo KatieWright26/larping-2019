@@ -10,6 +10,7 @@ end
 gem 'autoprefixer-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
+gem 'font-awesome-sass', '~> 5.9.0'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -21,6 +22,7 @@ gem 'rails', '~> 5.1.6'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'webpacker', '~> 4.x'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

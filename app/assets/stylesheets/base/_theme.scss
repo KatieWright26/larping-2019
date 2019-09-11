@@ -1,0 +1,14 @@
+body.dark {
+  background: $base-mid;
+  color: $base-mid-contrast;
+  .top-bar,
+  .top-bar .dropdown.menu,
+  .top-bar li a {
+    background-color: $base-dark;
+    color: white;
+  }
+
+  .switch.large .switch-paddle::after {
+   @include switch-icon("\f6d9");
+  }
+}
