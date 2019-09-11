@@ -55,6 +55,7 @@ body.dark {
     background-color: $base-mid;
     .accordion-title {
       border-color: $base-mid-contrast;
+      letter-spacing: 1px;
       color: $base-mid-contrast;
       font-weight: bold;
       &:hover,
@@ -63,6 +64,28 @@ body.dark {
         background-color: $base-mid-contrast;
         color: white;
       }
+    }
+    .accordion-content {
+      background-color: $base-dark;
+      border-color: $base-mid-contrast;
+      color: white;
+      p {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  a.button.primary {
+    background-color: $base-dark-contrast;
+    border-color: $base-mid-contrast;
+    color: white;
+    &:hover {
+      background-color: $base-mid-contrast;
+      font-weight: bold;
+      box-shadow: 0 0 5px $base-mid-contrast;
+    }
+    &:focus {
+      box-shadow: 0 0 5px $base-mid-contrast;
     }
   }
 }
