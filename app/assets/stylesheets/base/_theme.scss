@@ -9,11 +9,6 @@ body.dark {
   }
 
   .switch.large .switch-paddle::after {
-    background-color: transparent;
-    content: "\f6d9";
-    font-style: normal;
-    font-size: 2em;
-    display: flex;
-    align-items: center;
+   @include switch-icon("\f6d9");
   }
 }

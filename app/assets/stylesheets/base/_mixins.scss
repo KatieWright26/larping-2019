@@ -1,0 +1,8 @@
+@mixin switch-icon($hexcode) {
+  background-color: transparent;
+  content: $hexcode;
+  font-style: normal;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+}
