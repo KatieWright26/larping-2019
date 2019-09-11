@@ -1,11 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
   setLabelText();
+  let savedTheme = localStorage.getItem('darkTheme?');
   let themeChooser = document.getElementById("theme-chooser");
+  onLoad(savedTheme, themeChooser);
   themeChooser.addEventListener("click", function() {
     updateTheme(themeChooser)
     updateIcon(themeChooser);
   })
 });
+
+function onLoad(savedTheme, themeChooser) {
+  savedTheme === null ? localStorage.setItem('darkTheme?', false) : localStorage.setItem('darkTheme?', savedTheme);
+  themeChooser.checked = JSON.parse(localStorage.getItem('darkTheme?'));
+  updateTheme(themeChooser)
+  updateIcon(themeChooser);
+}
 
 function setLabelText() {
   let orcLabel = document.getElementById("theme-for-orcs");
@@ -36,6 +45,7 @@ function updateIcon(checkboxState) {
 function updateTheme(checkboxState) {
   let body = document.querySelector("body");
   checkboxState.checked ? body.classList.add("dark") : body.classList.remove("dark");
+  localStorage.setItem('darkTheme?', checkboxState.checked);
 }
 
 const orcTheme = [
