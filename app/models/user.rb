@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :larps, inverse_of: :user
   validates :email, :password, :name, presence: true
+  validates :password, length: { minimum: 6 }
 end
