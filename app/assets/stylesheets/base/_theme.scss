@@ -1,4 +1,7 @@
 body.dark {
+
+  // Navigation overrides
+
   background: $base-mid;
   color: $base-mid-contrast;
   .top-bar,
@@ -6,11 +9,71 @@ body.dark {
   .top-bar li a {
     background-color: $base-dark;
     color: white;
+    text-decoration: none;
   }
+
+  .navigation__sub-menu {
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  // Link overrides
+
+  a {
+    color: $dark-theme-link;
+    text-decoration: underline;
+    &.button.primary {
+      background-color: $base-dark-contrast;
+      border-color: $base-mid-contrast;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 1px;
+      &:hover {
+        background-color: $base-mid-contrast;
+        font-weight: bold;
+        box-shadow: 0 0 5px $base-mid-contrast;
+      }
+      &:focus {
+        box-shadow: 0 0 5px $base-mid-contrast;
+      }
+    }
+
+    &.button.warning {
+      background-color: $base-dark;
+      border-color: $dark-theme-link;
+      color:$dark-theme-link;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: 1px;
+      &:hover,
+      &:focus {
+        background-color: $dark-theme-link;
+        box-shadow: 0 0 5px $dark-theme-link;
+        color: $base-dark;
+      }
+      &:hover {
+        &:before,
+        &:after {
+          @extend .fas;
+          content: "\f714";
+          color: $dark-theme-warning-link;
+          font-size: 1.35em;
+          font-style: normal;
+          margin: 0 1em;
+        }
+      }
+    }
+  }
+
+  // Switch overrides
 
   .switch.large .switch-paddle::after {
     @include switch-icon("\f6d9");
   }
+
+  // Form overrides
 
   .form__container {
     background-color: $base-dark;
@@ -18,6 +81,12 @@ body.dark {
     h2, p, label {
       color: white;
     }
+
+    label {
+      letter-spacing: 1px;
+      font-style: normal;
+    }
+
     a {
       color: $base-mid-contrast;
       &:hover {
@@ -34,13 +103,41 @@ body.dark {
     hr {
       border-color: white;
     }
-    input {
+    input,
+    textarea,
+    select {
       background-color: $base-mid;
       border-color: $base-mid-contrast;
       color: $base-mid-contrast;
+      font-weight: bold;
+      letter-spacing: 1px;
       &:focus,
       &:hover {
         box-shadow: 0 0 5px $base-mid-contrast;
+      }
+    }
+  }
+
+  .accordion {
+    background-color: $base-mid;
+    .accordion-title {
+      border-color: $base-mid-contrast;
+      letter-spacing: 1px;
+      color: $base-mid-contrast;
+      font-weight: bold;
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 5px $base-mid-contrast;
+        background-color: $base-mid-contrast;
+        color: white;
+      }
+    }
+    .accordion-content {
+      background-color: $base-dark;
+      border-color: $base-mid-contrast;
+      color: white;
+      p {
+        margin-bottom: 0.5em;
       }
     }
   }

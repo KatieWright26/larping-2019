@@ -1,7 +1,22 @@
 <%= render "submenu" %>
 <div class="cell">
   <h1><%= @larp.title %> by <%= @larp.user.name %></h1>
-  <% if current_user == @larp.user %>
-    <p><%= link_to "Edit", edit_larp_path(@larp)%><p>
-  <% end %>
+  <section class="grid-x grid-margin-x">
+    <article class="cell medium-8">
+      <small>Starts on: <%= @larp.start_date.strftime("%d %b %Y") %></small><br/>
+      <small>Address:
+        <address>
+          <%= @larp.address.street %><br/>
+          <%= @larp.address.suburb %><br/>
+          <%= @larp.address.country %><br/>
+          <%= @larp.address.postcode %>
+        </address>
+      </small>
+      <p><%= @larp.description %></p>
+    </article>
+    <article class="cell medium-4">
+      <%= render "larps/admin/manage_larp", larp: @larp %>
+      <%= render "character_accordion" %>
+    </article>
+  </section>
 </div>

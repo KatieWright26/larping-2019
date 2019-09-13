@@ -2,10 +2,13 @@
   "name": "larping-2019",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^4.0.7"
+    "@rails/webpacker": "^4.0.7",
+    "activestorage": "^5.2.3",
+    "foundation-sites": "^6.5.3",
+    "jquery": "^3.4.1",
+    "rails-ujs": "^5.2.3"
   },
   "devDependencies": {
-    "eslint": "^6.3.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",

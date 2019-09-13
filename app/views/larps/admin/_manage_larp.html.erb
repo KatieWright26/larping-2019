@@ -1,0 +1,6 @@
+<% if larp.belongs_to_current_user?(current_user) %>
+  <%= link_to "Edit Larp", edit_larp_path(larp), class: "button primary expanded" %>
+  <%= link_to "Add New Character", new_character_path(larp_id: larp.id), class: "button primary expanded" %>
+  <hr>
+    <%= link_to "Delete LARP", larps_path(larp), method: :destroy, class: "button warning expanded", alert: "Are you sure? Deleting a LARP is permenant."%>
+<% end %>

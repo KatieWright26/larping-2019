@@ -10,19 +10,23 @@ class LarpPolicy < ApplicationPolicy
   end
 
   def edit?
-    @larp.user == @user
+    larp_belongs_to_current_user?
   end
 
   def update?
-    @larp.user == @user
+    larp_belongs_to_current_user?
   end
 
   def destroy?
-    @larp.user == @user
+    larp_belongs_to_current_user?
   end
 
   def initialize(user, larp)
     @user = user
     @larp = larp
+  end
+
+  def larp_belongs_to_current_user?
+    @larp.user == @user
   end
 end

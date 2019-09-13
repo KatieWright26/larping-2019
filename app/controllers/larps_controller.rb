@@ -8,6 +8,7 @@ class LarpsController < ApplicationController
 
   def new
     @larp = Larp.new
+    @address = Address.new
     authorize @larp
     if current_user.nil?
       redirect_to root_path
@@ -36,6 +37,7 @@ class LarpsController < ApplicationController
 
   def edit
     @larp = Larp.find(params[:id])
+    @address = @larp.address
     authorize @larp
     if current_user == @larp.user
       render :edit
@@ -54,6 +56,12 @@ class LarpsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @larp = Larp.find(params[:id])
+    authorize @larp
+    @larp.destroy!
   end
 
   private

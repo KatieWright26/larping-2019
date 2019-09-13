@@ -1,0 +1,14 @@
+<ul class="accordion" role="tablist" data-accordion data-allow-all-closed="true" data-multi-expand="true">
+  <% @larp.characters.each do |character| %>
+    <li class="accordion-item" data-accordion-item>
+      <a href="#character-<%= character.id %>" role="tab" class="accordion-title" id="character-<%= character.id %>-heading" aria-controls="character-<%= character.id %>"><%= character.name.titleize %></a>
+        <div id="character-<%= character.id %>" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="character-<%= character.id %>-heading">
+        <p><strong>Occupation:</strong> <%= character.occupation %></p>
+        <p><strong>Race:</strong> <%= character.race %></p>
+        <p><%= character.description.truncate(200) %>
+        <%= link_to "Read more", character_path(character) %></p><br/>
+        <%= apply_or_edit_character_button(@larp, character) %>
+      </div>
+    </li>
+  <% end %>
+</ul>
