@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   resources :larps
   resources :larps, only: [:edit] do
-    # resources :characters
     member do
       patch "assign_character" => "characters#assign"
       patch "unassign_character" => "characters#unassign"

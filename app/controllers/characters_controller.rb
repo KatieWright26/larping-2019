@@ -11,6 +11,7 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     @larp = @character.larp
+    authorize @character
     if @character.save!
       message = "Success! #{@character.name} has been added to #{@larp}."
       redirect_to larp_path(@larp), notice: message
@@ -26,6 +27,8 @@ class CharactersController < ApplicationController
 
   def edit
     @character = Character.find(params[:id])
+    authorize @character
+    @larp = @character.larp
   end
 
   def destroy; end
@@ -34,6 +37,10 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
 
     if @character.update(character_params)
+      message = "Success! #{@character.name} has been updated."
+      redirect_to larp_path(@larp), notice: message
+    else
+      render :edit
     end
   end
 
