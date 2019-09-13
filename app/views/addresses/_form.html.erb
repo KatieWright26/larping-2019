@@ -1,4 +1,4 @@
-<%= f.fields_for :address, Address.new do |a| %>
+<%= f.fields_for :address, @address do |a| %>
     <div class="field">
         <%= a.label :street %>
         <%= a.text_field :street %>
