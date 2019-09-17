@@ -5,5 +5,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     :image_aspect_ratio => "square",
     :image_size => 50
   }
-  # provider :facebook, "FACEBOOK_KEY", "FACEBOOK_SECRET"
+  provider :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET_ID']
 end
