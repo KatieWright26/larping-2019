@@ -5,22 +5,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[google_oauth2]
+         :omniauthable, omniauth_providers: %i[google_oauth2 facebook]
 
   has_many :larps, inverse_of: :user
   validates :email, :password, :name, presence: true
   validates :password, length: { minimum: 6 }
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20]
-      user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
-      # If you are using confirmable and the provider(s) you use
-      # validate emails,
-      # uncomment the line below to skip the
-      # confirmation emails.user.skip_confirmation!
+  class << self
+    def create_with_omniauth(auth)
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.email = auth['info']['email']
+        user.password = Devise.friendly_token[0, 20]
+        user.name = auth['info']['name']
+      end
     end
   end
 end

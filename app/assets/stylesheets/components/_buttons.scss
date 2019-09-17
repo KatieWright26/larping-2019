@@ -1,0 +1,24 @@
+.social-media__buttons {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+
+  &--google,
+  &--facebook {
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 $global-margin / 2;
+    background: white;
+    color: $dark-gray;
+    border: 1px dashed $light-gray;
+    &:hover {
+      background: $dark-gray;
+      color: white;
+      border: 1px $dark-gray solid;
+    }
+  }
+}

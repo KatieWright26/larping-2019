@@ -13,10 +13,13 @@
 
   <body>
   <%= render "shared/nav" %>
-    <div class="grid-container">
-      <div class="grid-x grid-margin-x">
-        <%= yield %>
-      </div>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <%= yield %>
     </div>
+  </div>
   </body>
 </html>

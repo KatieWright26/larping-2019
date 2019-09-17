@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20190913120020) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.bigint "larps_id"
+    t.string "provider", limit: 50, default: "", null: false
+    t.string "uid", limit: 500, default: "", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["larps_id"], name: "index_users_on_larps_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
