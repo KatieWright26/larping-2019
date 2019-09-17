@@ -17,6 +17,5 @@ Rails.application.routes.draw do
   resources :addresses
   resources :users, only: [:edit, :update, :show]
 
-  get "/auth/:provider/callback" => "sessions#create"
-  # get "auth/failure", to: redirect("/")
+  post "/auth/:provider/callback" => "sessions#create"
 end
