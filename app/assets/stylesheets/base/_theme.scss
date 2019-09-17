@@ -64,6 +64,7 @@ body.dark {
         &:before,
         &:after {
           @extend .fas;
+          @include here-be-dragons();
           content: "\f714";
           color: $dark-theme-warning-link;
           font-size: 1.35em;
@@ -180,6 +181,20 @@ body.dark {
       color: $dark-theme-link;
       background-color: $base-mid;
       border: 1px dashed $dark-theme-link;
+    }
+    &.alert-alert {
+      color: $dark-theme-link;
+      background-color: $dark-theme-warning-link;
+      border: 1px dashed $dark-theme-link;
+      &:before,
+      &:after {
+        @extend .fas;
+        @include here-be-dragons();
+        content: "\f714";
+        font-size: 1.35em;
+        font-style: normal;
+        margin: 0 1em;
+      }
     }
   }
 }
