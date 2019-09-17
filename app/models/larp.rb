@@ -6,6 +6,7 @@ class Larp < ApplicationRecord
   has_many :characters
 
   validates :title, :description, :start_date, presence: true
+  validates_associated :address
   accepts_nested_attributes_for :address
 
   def belongs_to_current_user?(user)
