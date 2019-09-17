@@ -6,3 +6,24 @@
   display: flex;
   align-items: center;
 }
+
+@mixin here-be-dragons() {
+  @extend .fas;
+  content: "\f714";
+  font-size: 1.35em;
+  font-style: normal;
+  margin: 0 1em;
+  color: $dark-theme-warning-link;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+}

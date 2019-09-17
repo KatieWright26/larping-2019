@@ -7,7 +7,6 @@
 
 
 body.dark {
-
   // Navigation overrides
 
   background: $base-mid;
@@ -64,12 +63,7 @@ body.dark {
       &:hover {
         &:before,
         &:after {
-          @extend .fas;
-          content: "\f714";
-          color: $dark-theme-warning-link;
-          font-size: 1.35em;
-          font-style: normal;
-          margin: 0 1em;
+          @include here-be-dragons();
         }
       }
     }
@@ -171,6 +165,25 @@ body.dark {
     p {
       background: $base-dark;
       color: $base-mid-contrast;
+    }
+  }
+
+  //  Alerts
+
+  .alert {
+    &.alert-notice {
+      color: $dark-theme-link;
+      background-color: $base-mid;
+      border: 1px dashed $dark-theme-link;
+    }
+    &.alert-alert {
+      color: $dark-theme-link;
+      background-color: $dark-theme-warning-link;
+      border: 1px dashed $dark-theme-link;
+      &:before,
+      &:after {
+        @include here-be-dragons();
+      }
     }
   }
 }

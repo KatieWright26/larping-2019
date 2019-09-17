@@ -1,0 +1,16 @@
+.alert {
+  &.alert-notice {
+    background: $base-mid-contrast;
+    color: $body-background;
+  }
+  &.alert-alert {
+    background: #ec8f6a;
+    color: $body-background;
+  }
+  &.alert-alert,
+  &.alert-notice {
+    padding: 1em 0;
+    text-align: center;
+    font-weight: bold;
+  }
+}
