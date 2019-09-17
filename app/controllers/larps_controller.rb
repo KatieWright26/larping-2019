@@ -33,6 +33,7 @@ class LarpsController < ApplicationController
 
   def show
     @larp = Larp.find(params[:id])
+    authorize @larp
   end
 
   def edit
