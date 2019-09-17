@@ -1,0 +1,8 @@
+<div class="social-media__buttons">
+  <%= link_to omniauth_authorize_path(:user, :google_oauth2), method: :post, class: "social-media__buttons--google" do %>
+    <i class="fab fa-google"></i>
+  <% end %>
+  <%= link_to omniauth_authorize_path(:user, :facebook), method: :post, class: "social-media__buttons--facebook" do %>
+    <i class="fab fa-facebook-f"></i>
+  <% end %>
+</div>

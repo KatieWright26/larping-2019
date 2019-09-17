@@ -1,35 +1,37 @@
-<% content_for :title, "Sign Up" %>
+<% content_for :title, "Log In" %>
 <div class="cell small-12 medium-6 medium-offset-3">
   <div class="grid-x grid-margin-x grid-margin-y grid-padding-x form__container">
     <div class="cell">
-      <%= link_to "Sign up with Google", omniauth_authorize_path(:user, :google_oauth2), method: :post %>
-      <%= link_to "Sign up with Facebook", omniauth_authorize_path(:user, :facebook), method: :post %>
       <h2>Log in</h2>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "devise/socials/omniauth_buttons" %>
+      <section class="authentication__container">
+        <p>or</p>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-        <div class="field">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password %>
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
-
-        <% if devise_mapping.rememberable? %>
           <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+
+          <div class="actions">
+            <%= f.submit "Log in", class: "button primary" %>
           </div>
         <% end %>
 
-        <div class="actions">
-          <%= f.submit "Log in", class: "button primary" %>
-        </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
-    </div>
+        <%= render "devise/shared/links" %>
+      </div>
+    </section>
   </div>
 </div>

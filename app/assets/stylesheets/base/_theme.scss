@@ -1,3 +1,11 @@
+// 1. Navigation
+// 2. Links
+// 3.Switch
+// 4.Form
+// 5. Social Media Buttons
+// 6. Authentication
+
+
 body.dark {
 
   // Navigation overrides
@@ -43,7 +51,7 @@ body.dark {
     &.button.warning {
       background-color: $base-dark;
       border-color: $dark-theme-link;
-      color:$dark-theme-link;
+      color: $dark-theme-link;
       font-weight: bold;
       text-decoration: none;
       letter-spacing: 1px;
@@ -139,6 +147,30 @@ body.dark {
       p {
         margin-bottom: 0.5em;
       }
+    }
+  }
+
+  // Social Media Buttons
+
+  a.social-media__buttons--google,
+  a.social-media__buttons--facebook {
+    background: $base-mid;
+    border: 1px dashed $base-mid-contrast;
+    color: $dark-theme-link;
+    text-decoration: none;
+    &:hover {
+      background: $dark-theme-link;
+      color: $base-mid-contrast;
+      border: 1px $dark-theme-link solid;
+    }
+  }
+
+  // Authentication
+  .authentication__container {
+    border-color: $base-mid-contrast;
+    p {
+      background: $base-dark;
+      color: $base-mid-contrast;
     }
   }
 }
