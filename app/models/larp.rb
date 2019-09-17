@@ -10,6 +10,8 @@ class Larp < ApplicationRecord
   accepts_nested_attributes_for :address
 
   def belongs_to_current_user?(user)
+    return false if user.nil?
+
     user_id == user.id
   end
 end
