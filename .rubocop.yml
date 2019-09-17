@@ -21,6 +21,10 @@ Style/Documentation:
     - 'app/mailers/**'
     - 'app/helpers/**'
     - 'app/policies/**'
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/**/*'
+
 
 Metrics/BlockLength:
   Exclude:
