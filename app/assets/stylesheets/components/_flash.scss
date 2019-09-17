@@ -1,0 +1,9 @@
+.alert {
+  &.alert-notice {
+    background: $base-mid-contrast;
+    padding: 1em 0;
+    color: $body-background;
+    text-align: center;
+    font-weight: bold;
+  }
+}

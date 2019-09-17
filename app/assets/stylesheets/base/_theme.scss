@@ -7,7 +7,6 @@
 
 
 body.dark {
-
   // Navigation overrides
 
   background: $base-mid;
@@ -171,6 +170,16 @@ body.dark {
     p {
       background: $base-dark;
       color: $base-mid-contrast;
+    }
+  }
+
+  //  Alerts
+
+  .alert {
+    &.alert-notice {
+      color: $dark-theme-link;
+      background-color: $base-mid;
+      border: 1px dashed $dark-theme-link;
     }
   }
 }
