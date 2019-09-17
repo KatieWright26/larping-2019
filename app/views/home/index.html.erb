@@ -1,1 +1,22 @@
-<h1>Home</h1>
+<section class="cell medium-6">
+  <article class="grid-x">
+    <h1>What is Larping?</h1>
+
+    <cite><a href="https://www.urbandictionary.com/define.php?term=Larping">Larping (or LARPing) is short for "Live Action Role-Playing". A live action role-playing game is a form of role-playing game where the participants physically act out their characters' actions. The players pursue their characters' goals within a fictional setting represented by the real world, while interacting with one another in character. The outcome of player actions may be mediated by game rules, or determined by consensus between players.</a></cite>
+  </article>
+</section>
+<section class="cell medium-6">
+  <article>
+    <h2 class="h4">Recently created LARPs</h2>
+    <% @larps.each do |larp| %>
+      <section>
+        <article>
+          <h3 class="h5"><strong><%= larp.title %></strong></h3>
+          <p>Created by <%= larp.user.name %></p>
+          <p>Available Characters: <%= larp.characters.count %></p>
+          <p><%= larp.description.truncate(70) %></p>
+        </article>
+      </section>
+    <% end %>
+  </article>
+</section>
