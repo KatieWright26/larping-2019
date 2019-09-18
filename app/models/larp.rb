@@ -14,4 +14,8 @@ class Larp < ApplicationRecord
 
     user_id == user.id
   end
+
+  def larp_created_within_a_week?
+    ((7.days.ago)..(Time.now)).include?(created_at)
+  end
 end

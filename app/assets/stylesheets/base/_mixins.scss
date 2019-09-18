@@ -27,3 +27,17 @@
     }
   }
 }
+
+@mixin badge-customizer($badge-background, $color: none) {
+  position: absolute;
+  color: $badge-background;
+  font-size: 1em;
+  span {
+    color: $color;
+    font-family: Helvetica;
+    position: absolute;
+    left: 0.65em;
+    top: 1.15em;
+    font-size: 0.3em;
+  }
+}

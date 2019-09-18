@@ -1,10 +1,11 @@
 // 1. Navigation
 // 2. Links
-// 3.Switch
-// 4.Form
+// 3. Switch
+// 4. Form
 // 5. Social Media Buttons
 // 6. Authentication
-
+// 7. Alerts
+// 8. Badges
 
 body.dark {
   // Navigation overrides
@@ -30,7 +31,6 @@ body.dark {
 
   a {
     color: $dark-theme-link;
-    text-decoration: underline;
     &.button.primary {
       background-color: $base-dark-contrast;
       border-color: $base-mid-contrast;
@@ -75,7 +75,7 @@ body.dark {
     @include switch-icon("\f6d9");
   }
 
-  // Form overrides
+  // Forms
 
   .form__container {
     background-color: $base-dark;
@@ -95,6 +95,7 @@ body.dark {
         color: lighten($base-mid-contrast, 10%);
       }
     }
+
     .button.primary {
       background-color: $base-dark-contrast;
       color: white;
@@ -102,9 +103,11 @@ body.dark {
         background-color: $base-mid-contrast
       }
     }
+
     hr {
       border-color: white;
     }
+
     input,
     textarea,
     select {
@@ -185,5 +188,14 @@ body.dark {
         @include here-be-dragons();
       }
     }
+  }
+
+  // Badges
+
+  .badge--new {
+    @include badge-customizer($dark-theme-link, $base-dark);
+  }
+  .badge--owner {
+    @include badge-customizer($base-mid-contrast);
   }
 }
