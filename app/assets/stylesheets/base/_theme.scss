@@ -183,9 +183,9 @@ body.dark {
       color: $dark-theme-link;
       background-color: $dark-theme-warning-link;
       border: 1px dashed $dark-theme-link;
-      &:before,
-      &:after {
-        @include here-be-dragons();
+      &::before,
+      &::after {
+        @include here-be-dragons($dark-theme-link);
       }
     }
   }

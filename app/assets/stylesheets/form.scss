@@ -3,4 +3,25 @@
   border: $global-border;
   margin: 2em 0;
   position: relative;
+  &--switch {
+    @extend .switch;
+    @extend .small;
+    .switch-paddle {
+      height: 0.7em;
+      border-radius: 15px;
+      margin-top: $global-margin;
+      background: $black;
+      &::after {
+        border: 1px dashed $black;
+        border-radius: 100%;
+        top: -0.5em;
+      }
+    }
+    input:checked ~ .switch-paddle {
+      background: $dark-theme-link;
+      &::after{
+        border: 1px dashed $dark-theme-link;
+      }
+    }
+  }
 }
