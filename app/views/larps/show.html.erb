@@ -16,7 +16,11 @@
     </article>
     <article class="cell medium-4">
       <%= render "larps/admin/manage_larp", larp: @larp %>
-      <%= render "character_accordion" %>
+      <% if @larp.belongs_to_current_user?(current_user) %>
+        <%= render "character_accordion", characters: @larp.characters %>
+      <% else %>
+        <%= render "character_accordion", characters: @larp.published_characters %>
+      <% end %>
     </article>
   </section>
 </div>
