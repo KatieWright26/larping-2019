@@ -1,4 +1,4 @@
-<%= form_with model: @character, autocomplete: false do |f| %>
+<%= form_with model: @character, autocomplete: false, local: true do |f| %>
   <%= f.hidden_field :larp_id, value: @larp.id %>
   <div class="field">
     <%= f.label :name %>

@@ -13,10 +13,9 @@ class CharactersController < ApplicationController
     @larp = @character.larp
     authorize @character
     if @character.save!
-      message = "Success! #{@character.name} has been added to #{@larp}."
+      message = "Success! #{@character.name} has been added to #{@larp.name}."
       redirect_to larp_path(@larp), notice: message
     else
-
       render :new
     end
   end
