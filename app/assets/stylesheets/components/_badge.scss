@@ -1,0 +1,15 @@
+.badge--new {
+  @include badge-customizer($light-theme-alert, $white);
+  @extend .fas;
+  @extend .fa-certificate;
+  right: -0.5em;
+  top: -0.5em;
+}
+
+.badge--owner {
+  @include badge-customizer($base-mid-contrast, $white);
+  @extend .fas;
+  @extend .fa-bookmark;
+  right: 0.6em;
+  top: -0.15em;
+}

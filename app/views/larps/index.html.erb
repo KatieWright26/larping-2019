@@ -4,9 +4,13 @@
   <div class="grid-x grid-margin-x grid-margin-y grid-padding-x">
     <section class="cell">
       <% @larps.each do |larp| %>
-        <article class="form__container">
+        <article class="article__container">
           <%= link_to larp do %>
-            <h2><%= larp.title %></h2>
+            <h2>
+              <%= larp.title %>
+              <%= display_new_badge(larp) %>
+              <%= display_ownership_badge(larp) %>
+            </h2>
             <p><%= larp.description %><p>
           <% end %>
         </article>
