@@ -4,6 +4,8 @@ module CharacterHelper
   RACES = %i[human non-human].freeze
 
   def apply_or_edit_character_button(larp, character)
+    return if current_user.nil?
+
     if current_user.id == larp.user_id
       link_to 'Manage Character',
               edit_character_path(character),

@@ -18,4 +18,8 @@ class Larp < ApplicationRecord
   def larp_created_within_a_week?
     ((7.days.ago)..(Time.now)).include?(created_at)
   end
+
+  def published_characters
+    characters.where(published: true)
+  end
 end
