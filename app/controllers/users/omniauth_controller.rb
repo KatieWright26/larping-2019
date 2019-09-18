@@ -17,6 +17,7 @@ class Users::OmniauthController < Devise::OmniauthCallbacksController
 
   def respond_to_callback(kind)
     if @user.persisted?
+      kind = kind == 'facebook' ? 'Facebook' : 'Google'
       set_flash_message(:notice, :success, kind: kind) if
       is_navigational_format?
       sign_in_and_redirect @user, event: :authentication
