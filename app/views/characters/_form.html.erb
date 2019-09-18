@@ -20,5 +20,16 @@
     <%= f.text_field :occupation %>
   </div>
 
+  <div class="field">
+    <label>Publish Character</label>
+    <div class="form__container--switch">
+      <%= f.check_box :published, class:"switch-input", id: "character[published]", name:"character[published]", aria_describedby: "publish_character_help_text" %>
+      <%= f.label :published, class:"switch-paddle", for: "character[published]" do %>
+        <span class="show-for-sr">Small Portions Only</span>
+      <% end %>
+    </div>
+    <p class="help-text" id="publish_character_help_text">By choosing to publish this character, other users will be able to view all details about the character and start applying to play them.</p>
+  </div>
+
   <%= f.submit class: "button primary" %>
 <% end %>

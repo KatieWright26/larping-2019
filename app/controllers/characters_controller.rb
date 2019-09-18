@@ -22,6 +22,7 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
+    authorize @character
   end
 
   def edit
@@ -34,10 +35,9 @@ class CharactersController < ApplicationController
 
   def update
     @character = Character.find(params[:id])
-
     if @character.update(character_params)
       message = "Success! #{@character.name} has been updated."
-      redirect_to larp_path(@larp), notice: message
+      redirect_to larp_path(@character.larp), notice: message
     else
       render :edit
     end
@@ -53,6 +53,7 @@ class CharactersController < ApplicationController
     params.require(:character).permit(:name, :description,
                                       :race,
                                       :occupation,
+                                      :published,
                                       :larp_id)
   end
 end

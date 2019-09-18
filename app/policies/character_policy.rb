@@ -21,6 +21,10 @@ class CharacterPolicy < ApplicationPolicy
     user_owns_larp?
   end
 
+  def show?
+    @record.published?
+  end
+
   def initialize(user, record)
     @user = user
     @record = record

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190913120020) do
+ActiveRecord::Schema.define(version: 20190918142231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20190913120020) do
     t.bigint "larp_id"
     t.bigint "user_id"
     t.string "description"
+    t.boolean "published", default: false
     t.index ["larp_id"], name: "index_characters_on_larp_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end

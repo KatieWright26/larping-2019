@@ -7,13 +7,13 @@
   align-items: center;
 }
 
-@mixin here-be-dragons() {
+@mixin here-be-dragons($color: $dark-theme-warning-link) {
   @extend .fas;
   content: "\f714";
   font-size: 1.35em;
   font-style: normal;
   margin: 0 1em;
-  color: $dark-theme-warning-link;
+  color: $color;
   animation: blink-animation 1s steps(5, start) infinite;
   -webkit-animation: blink-animation 1s steps(5, start) infinite;
   @keyframes blink-animation {
