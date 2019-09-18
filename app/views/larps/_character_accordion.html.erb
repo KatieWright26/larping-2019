@@ -1,6 +1,6 @@
 <% if @larp.characters.present? %>
   <ul class="accordion" role="tablist" data-accordion data-allow-all-closed="true" data-multi-expand="true">
-    <% @larp.characters.each do |character| %>
+    <% characters.each do |character| %>
       <li class="accordion-item" data-accordion-item>
         <a href="#character-<%= character.id %>" role="tab" class="accordion-title" id="character-<%= character.id %>-heading" aria-controls="character-<%= character.id %>"><%= character.name.titleize %></a>
           <div id="character-<%= character.id %>" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="character-<%= character.id %>-heading">
