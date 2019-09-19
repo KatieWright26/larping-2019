@@ -2,11 +2,11 @@
 
 class CharacterPolicy < ApplicationPolicy
   def new?
-    user_owns_larp?
+    user_is_logged_in? && user_owns_larp?
   end
 
   def create?
-    user_owns_larp?
+    user_is_logged_in? && user_owns_larp?
   end
 
   def edit?
@@ -34,5 +34,9 @@ class CharacterPolicy < ApplicationPolicy
 
   def user_owns_larp?
     @user.larps.include?(@record.larp)
+  end
+
+  def user_is_logged_in?
+    !@user.nil?
   end
 end

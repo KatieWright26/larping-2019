@@ -2,18 +2,17 @@
 
 class CharactersController < ApplicationController
   def new
-    @character = Character.new
-    @larp = Larp.find(params[:larp_id])
-    @character.larp_id = @larp.id
+    @character = Character.new(larp_id: params[:larp_id])
     authorize @character
+    @larp = Larp.find(params[:larp_id])
   end
 
   def create
     @character = Character.new(character_params)
-    @larp = @character.larp
     authorize @character
-    if @character.save!
-      message = "Success! #{@character.name} has been added to #{@larp.name}."
+    @larp = @character.larp
+    if @character.save
+      message = "Success! #{@character.name} has been added to #{@larp.title}."
       redirect_to larp_path(@larp), notice: message
     else
       render :new
