@@ -10,7 +10,7 @@ RSpec.describe UsersController, type: :controller do
       get :show, params: { id: user.id }
 
       expect(response.status).to eq 200
-      expect(response).to render user_path(user.id)
+      expect(response).to render_template :show
     end
   end
 end
