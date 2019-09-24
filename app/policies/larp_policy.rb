@@ -27,6 +27,10 @@ class LarpPolicy < ApplicationPolicy
   end
 
   def larp_belongs_to_current_user?
-    @larp.user == @user
+    user_is_signed_in? && @larp.user == @user
+  end
+
+  def user_is_signed_in?
+    !@user.nil?
   end
 end

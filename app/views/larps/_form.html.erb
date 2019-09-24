@@ -1,5 +1,5 @@
 <%= form_for @larp do |f| %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :user_id, value: @larp.user_id %>
   <div class="field">
       <%= f.label :title %>
       <%= f.text_field :title %>

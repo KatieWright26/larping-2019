@@ -168,6 +168,22 @@ RSpec.describe CharactersController, type: :controller do
     end
   end
 
+  describe 'GET#show' do
+    let!(:published_character) { FactoryBot.create(:character, :published) }
+    let!(:unpublished_character) { FactoryBot.create(:character) }
+    it 'returns the character show page for published characters' do
+      get :show, params: { id: published_character.id }
+      expect(response).to render_template(:show)
+      expect(response.status).to eq 200
+    end
+
+    it 'redirects to the home page for unpublished characters' do
+      get :show, params: { id: unpublished_character.id }
+      expect(response).to redirect_to root_path
+      expect(response.status).to eq 302
+    end
+  end
+
   describe 'DELETE#destroy' do
     let!(:user) { FactoryBot.create(:user) }
     let!(:larp) { FactoryBot.create(:larp, user: user) }

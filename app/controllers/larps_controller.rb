@@ -7,26 +7,20 @@ class LarpsController < ApplicationController
   end
 
   def new
-    @larp = Larp.new
-    @address = Address.new
+    @larp = Larp.new(user_id: params[:user_id])
     authorize @larp
-    if current_user.nil?
-      redirect_to root_path
-    else
-      @user = User.find(current_user.id)
-      render :new
-    end
+    @address = Address.new
+    render :new
   end
 
   def create
     @larp = Larp.new(permitted_params)
     authorize @larp
-
     if @larp.save!
-      flash[:notice] = 'Larp created'
+      flash[:notice] = 'Success! You LARP has been created!'
       redirect_to root_path
     else
-      flash[:alert] = 'Larp not created'
+      flash[:alert] = 'Oops! There was an error creating your LARP.'
       render :new
     end
   end
@@ -40,18 +34,13 @@ class LarpsController < ApplicationController
     @larp = Larp.find(params[:id])
     @address = @larp.address
     authorize @larp
-    if current_user == @larp.user
-      render :edit
-    else
-      message = 'You are not authorized to perform that action'
-      redirect_to root_path, alert: message
-    end
+    render :edit
   end
 
   def update
     @larp = Larp.find(params[:id])
     authorize @larp
-    if @larp.update(permitted_params) && current_user == @larp.user
+    if @larp.update(permitted_params)
       message = 'LARP successfully updated'
       redirect_to larp_path(@larp), notice: message
     else
@@ -63,6 +52,7 @@ class LarpsController < ApplicationController
     @larp = Larp.find(params[:id])
     authorize @larp
     @larp.destroy!
+    redirect_to larps_path, message: 'Your LARP has been deleted'
   end
 
   private
