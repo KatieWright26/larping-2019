@@ -10,15 +10,15 @@ class CharacterPolicy < ApplicationPolicy
   end
 
   def edit?
-    user_owns_larp?
+    user_is_logged_in? && user_owns_larp?
   end
 
   def update?
-    user_owns_larp?
+    user_is_logged_in? && user_owns_larp?
   end
 
   def destroy?
-    user_owns_larp?
+    user_is_logged_in? && user_owns_larp?
   end
 
   def show?

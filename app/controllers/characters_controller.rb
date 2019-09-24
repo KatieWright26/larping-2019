@@ -30,10 +30,15 @@ class CharactersController < ApplicationController
     @larp = @character.larp
   end
 
-  def destroy; end
+  def destroy
+    @character = Character.find(params[:id])
+    authorize @character
+    @character.destroy!
+  end
 
   def update
     @character = Character.find(params[:id])
+    authorize @character
     if @character.update(character_params)
       message = "Success! #{@character.name} has been updated."
       redirect_to larp_path(@character.larp), notice: message
