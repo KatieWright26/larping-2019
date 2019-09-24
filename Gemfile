@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
+source 'https://rubygems.org'
 
 gem 'autoprefixer-rails'
 gem 'codecov', require: false, group: :test
@@ -25,13 +26,12 @@ gem 'pg'
 gem 'pry-byebug'
 gem 'puma', '~> 3.7'
 gem 'pundit'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 5.2.3'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'simplecov', require: false
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 4.x'
-
 group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
