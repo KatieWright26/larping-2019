@@ -8,4 +8,8 @@ FactoryBot.define do
     occupation { Faker::Job.title }
     larp
   end
+
+  trait :published do
+    published { true }
+  end
 end
