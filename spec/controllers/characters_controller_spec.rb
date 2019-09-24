@@ -104,4 +104,46 @@ RSpec.describe CharactersController, type: :controller do
       end
     end
   end
+
+  describe "GET#edit" do
+    context 'when a user is not signed in' do
+      it 'redirects the user to the root path' do
+        get :edit
+        expect(response).to redirect_to root_path
+      end
+    end
+
+    context 'when a user is signed in' do
+      before(:each) do
+        sign_in user
+      end
+
+      it 'successfully calls the edit method' do
+        get :edit
+        expect(response).to render_template :edit
+      end
+    end
+  end
+
+  describe "PATCH#update" do
+    let!(:larp) { FactoryBot.create(:larp, user: user) }
+    let!(:character) { FactoryBot.create(:character, larp: larp) }
+
+    context 'when a user is not signed in' do
+      it 'redirects the user to the root path' do
+        patch :update, params: {}
+        expect(response).to redirect_to root_path
+      end
+    end
+
+    context 'when a user is signed in' do
+      before(:each) do
+        sign_in user
+      end
+      it 'successfully calls the edit method' do
+        get :edit
+        expect(response).to render_template :edit
+      end
+    end
+  end
 end
