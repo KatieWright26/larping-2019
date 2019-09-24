@@ -88,46 +88,6 @@
         null,
         null
       ],
-      "/Users/katie/Documents/workspace/larping-2019/app/controllers/users_controller.rb": [
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/katie/Documents/workspace/larping-2019/app/controllers/application_controller.rb": [
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null
-      ],
       "/Users/katie/Documents/workspace/larping-2019/app/models/larp.rb": [
         null,
         null,
@@ -141,38 +101,38 @@
         1,
         null,
         1,
-        0,
+        3,
         null,
-        0,
-        null,
-        null,
-        1,
-        0,
+        2,
         null,
         null,
         1,
-        0,
+        2,
+        null,
+        null,
+        1,
+        1,
         null,
         null
       ],
-      "/Users/katie/Documents/workspace/larping-2019/app/mailers/application_mailer.rb": [
+      "/Users/katie/Documents/workspace/larping-2019/app/models/address.rb": [
         null,
         null,
-        0,
-        0,
-        0,
-        0
+        1,
+        1,
+        1,
+        null
       ],
       "/Users/katie/Documents/workspace/larping-2019/app/models/character.rb": [
         null,
         null,
-        0,
-        0,
+        1,
+        1,
         null,
-        0,
-        0
+        1,
+        null
       ],
-      "/Users/katie/Documents/workspace/larping-2019/app/models/address.rb": [
+      "/Users/katie/Documents/workspace/larping-2019/app/mailers/application_mailer.rb": [
         null,
         null,
         0,
@@ -323,6 +283,46 @@
       "/Users/katie/Documents/workspace/larping-2019/app/jobs/application_job.rb": [
         null,
         null,
+        0,
+        0
+      ],
+      "/Users/katie/Documents/workspace/larping-2019/app/controllers/application_controller.rb": [
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/katie/Documents/workspace/larping-2019/app/controllers/users_controller.rb": [
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
         0,
         0
       ],
@@ -540,6 +540,6 @@
         0
       ]
     },
-    "timestamp": 1569333518
+    "timestamp": 1569334850
   }
 }
