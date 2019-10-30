@@ -9,7 +9,6 @@ class LarpsController < ApplicationController
   def new
     @larp = Larp.new
     authorize @larp
-    @user = current_user.id
     @address = Address.new
     render :new
   end
@@ -17,6 +16,7 @@ class LarpsController < ApplicationController
   def create
     @larp = Larp.new(permitted_params)
     authorize @larp
+    @larp.user_id = current_user.id
     if @larp.save!
       flash[:notice] = 'Success! You LARP has been created!'
       redirect_to root_path
@@ -33,7 +33,6 @@ class LarpsController < ApplicationController
 
   def edit
     @larp = Larp.find(params[:id])
-    @user = @larp.user_id
     @address = @larp.address
     authorize @larp
     render :edit
