@@ -7,8 +7,9 @@ class LarpsController < ApplicationController
   end
 
   def new
-    @larp = Larp.new(user_id: params[:user_id])
+    @larp = Larp.new
     authorize @larp
+    @user = current_user.id
     @address = Address.new
     render :new
   end
@@ -32,6 +33,7 @@ class LarpsController < ApplicationController
 
   def edit
     @larp = Larp.find(params[:id])
+    @user = @larp.user_id
     @address = @larp.address
     authorize @larp
     render :edit
