@@ -24,7 +24,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem 'pg'
 gem 'pry-byebug'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 gem 'pundit'
 gem 'rails', '~> 5.2.3'
 gem 'rubocop', require: false
