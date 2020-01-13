@@ -448,26 +448,12 @@
         null,
         null
       ],
-      "/Users/katie/Documents/workspace/larping-2019/app/mailers/application_mailer.rb": [
-        null,
-        null,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/katie/Documents/workspace/larping-2019/app/policies/user_policy.rb": [
         null,
         null,
         0,
         0,
         0,
-        0,
-        0
-      ],
-      "/Users/katie/Documents/workspace/larping-2019/app/jobs/application_job.rb": [
-        null,
-        null,
         0,
         0
       ],
@@ -511,24 +497,8 @@
         0,
         0,
         0
-      ],
-      "/Users/katie/Documents/workspace/larping-2019/app/channels/application_cable/connection.rb": [
-        null,
-        null,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/katie/Documents/workspace/larping-2019/app/channels/application_cable/channel.rb": [
-        null,
-        null,
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1578930857
+    "timestamp": 1578931250
   }
 }
