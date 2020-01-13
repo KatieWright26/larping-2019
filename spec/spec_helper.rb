@@ -18,7 +18,7 @@
 require 'simplecov'
 require 'codecov'
 SimpleCov.start 'rails'
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

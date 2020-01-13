@@ -9,7 +9,7 @@
             <h2>
               <%= larp.title %>
               <%= display_new_badge(larp) %>
-              <%= display_ownership_badge(larp) %>
+              <%= display_ownership_badge(larp, current_user) %>
             </h2>
             <p><%= larp.description %><p>
           <% end %>
