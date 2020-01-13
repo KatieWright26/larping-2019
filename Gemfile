@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
+  gem 'rb-readline'
 end
 
 group :development do

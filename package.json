@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "^4.0.7",
     "activestorage": "^5.2.3",
+    "core-js": "3",
     "foundation-sites": "^6.5.3",
     "jquery": "^3.4.1",
     "rails-ujs": "^5.2.3"

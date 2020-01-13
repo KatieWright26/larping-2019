@@ -3,9 +3,16 @@
 
 [Production Site](https://larping-2019.herokuapp.com/)
 
+## To run app
+`rails s`
+
+## To run tests
+`rspec spec/*`
+
 ## Stack
 - Ruby on Rails
 - Postgres DB
+- Yarn
 - Foundation as styling framework
 - Rspec, Cabybara, FactoryBot as testing stack.
 - Ruby 2.5.3
