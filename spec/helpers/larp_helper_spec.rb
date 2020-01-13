@@ -15,7 +15,8 @@ RSpec.describe LarpHelper, type: :helper do
     end
 
     it 'returns true of larp is less than 1 week old' do
-      expect(display_new_badge(larp)).to eq content_tag(:i, content_tag(:span, 'new'), class: 'badge--new')
+      expect(display_new_badge(larp))
+        .to eq content_tag(:i, content_tag(:span, 'new'), class: 'badge--new')
     end
   end
 
@@ -25,7 +26,8 @@ RSpec.describe LarpHelper, type: :helper do
     end
 
     it 'returns false for larps not belonging to the current user' do
-      expect(display_ownership_badge(larp, user)).to eq content_tag(:i, nil, class: 'badge--owner')
+      expect(display_ownership_badge(larp, user))
+        .to eq content_tag(:i, nil, class: 'badge--owner')
     end
   end
 end

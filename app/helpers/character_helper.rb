@@ -3,7 +3,7 @@
 module CharacterHelper
   RACES = %i[human non-human].freeze
 
-  def apply_or_edit_character_button(larp, character)
+  def apply_or_edit_character_button(larp, character, current_user)
     return if current_user.nil?
 
     if current_user.id == larp.user_id

@@ -8,7 +8,7 @@
           <p><strong>Race:</strong> <%= character.race %></p>
           <p><%= character.description.truncate(200) %>
           <%= link_to "Read more", character_path(character) %></p><br/>
-          <%= apply_or_edit_character_button(@larp, character) %>
+          <%= apply_or_edit_character_button(@larp, character, current_user) %>
         </div>
       </li>
     <% end %>
