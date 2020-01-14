@@ -32,3 +32,4 @@ yarn-debug.log*
 coverage/index.html
 coverage/assets/*
 .DS_Store
+./bundle
