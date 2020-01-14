@@ -1,1 +1,31 @@
-<%= render "form" %>
+<section class="cell medium-10 medium-offset-1">
+  <article class="grid-x grid-margin-x grid-margin-y grid-padding-x  form__container--inline">
+    <div class="cell medium-8">
+      <h2>Edit User Profile</h2>
+      <%= form_for(@user) do |f| %>
+        <%= render "devise/shared/error_messages", resource: @user %>
+
+        <div class="field">
+          <%= f.label :name %>
+          <%= f.text_field :name, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email,autocomplete: "email" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Update", class: "button primary" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="cell medium-4">
+      <h3>Cancel my account</h3>
+
+      <%= button_to "Delete account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "button primary" %>
+
+      <%= link_to "Back", :back, class: "button primary" %>
+    </div>
+  </article>
+</section>

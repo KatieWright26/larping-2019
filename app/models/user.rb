@@ -8,8 +8,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[google_oauth2 facebook]
 
   has_many :larps, inverse_of: :user
-  validates :email, :password, :name, presence: true
-  validates :password, length: { minimum: 6 }
+  validates :email, :name, presence: true
 
   class << self
     def create_with_omniauth(auth)
