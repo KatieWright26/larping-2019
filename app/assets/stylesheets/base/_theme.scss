@@ -46,25 +46,24 @@ body.dark {
         box-shadow: 0 0 5px $base-mid-contrast;
       }
     }
-
-    &.button.warning {
-      background-color: $base-dark;
-      border-color: $dark-theme-link;
-      color: $dark-theme-link;
-      font-weight: bold;
-      text-decoration: none;
-      letter-spacing: 1px;
-      &:hover,
-      &:focus {
-        background-color: $dark-theme-link;
-        box-shadow: 0 0 5px $dark-theme-link;
-        color: $base-dark;
-      }
-      &:hover {
-        &:before,
-        &:after {
-          @include here-be-dragons();
-        }
+  }
+  .button.warning {
+    background-color: $base-dark;
+    border-color: $dark-theme-link;
+    color: $dark-theme-link;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    &:hover,
+    &:focus {
+      background-color: $dark-theme-link;
+      box-shadow: 0 0 5px $dark-theme-link;
+      color: $base-dark;
+    }
+    &:hover {
+      &:before,
+      &:after {
+        @include here-be-dragons();
       }
     }
   }
@@ -121,6 +120,22 @@ body.dark {
         box-shadow: 0 0 5px $base-mid-contrast;
       }
     }
+  }
+
+  .form__container--inline {
+    @extend .form__container;
+    background-color: transparent;
+    border: none;
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .cell {
+      background-color: $base-dark;
+      border-color: $base-mid-contrast;
+      padding: $global-padding $global-padding * 2;
+    }
+    .button, .button_to { display: inline-block; }
   }
 
   .accordion {

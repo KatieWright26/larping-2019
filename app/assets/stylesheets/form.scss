@@ -1,7 +1,6 @@
 .form__container {
   background: #fefefe;
   border: $global-border;
-  margin: 2em 0;
   position: relative;
   &--switch {
     @extend .switch;
@@ -24,4 +23,23 @@
       }
     }
   }
+  label {
+    margin-bottom: 1em;
+  }
+}
+
+.form__container--inline {
+  @extend .form__container;
+  background: none;
+  border: none;
+  margin: 2em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .cell {
+    background: white;
+    border: $global-border;
+    padding: $global-padding $global-padding * 2;
+  }
+  .button, .button_to { display: inline-block; }
 }
