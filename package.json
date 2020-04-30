@@ -6,7 +6,7 @@
     "activestorage": "^5.2.3",
     "core-js": "3",
     "foundation-sites": "^6.5.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "rails-ujs": "^5.2.3"
   },
   "devDependencies": {
